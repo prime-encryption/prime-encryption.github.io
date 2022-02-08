@@ -1,0 +1,29 @@
+footer {
+    height: 3rem;
+    color: #333;
+    background: rgba(var(--main-rgb), 0.15);
+}
+.container {
+    width: var(--width);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+p {
+    font-size: 0.75rem;
+}
+.social-links {
+    display: flex;
+    gap: 10px;
+    font-size: 1.5rem;
+
+    li a {
+        color: #333;
+        transition: color 0.3s ease;
+    }
+    li:hover a {
+        color: black;
+    }
+}

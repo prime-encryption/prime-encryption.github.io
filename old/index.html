@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Encryption</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/index.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="column">
+            <h1>Encrypt</h1>
+            <div class="form">
+                <label for="e-key">Key</label>
+                <input type="text" id="e-key">
+                <label for="e-text">Text to encrypt</label>
+                <textarea id="e-text"></textarea>
+                <button id="e-submit">Encrypt</button>
+                <hr>
+                <label for="e-out">Encrypted text</label>
+                <textarea id="e-out" readonly></textarea>
+            </div>
+        </div>
+        <div class="column">
+            <h1>Decrypt</h1>
+            <div class="form">
+                <label for="d-key">Key</label>
+                <input type="text" id="d-key">
+                <label for="d-text">Text to decrypt</label>
+                <textarea id="d-text"></textarea>
+                <button id="d-submit">Decrypt</button>
+                <hr>
+                <label for="d-out">Decrypted text</label>
+                <textarea id="d-out" readonly></textarea>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

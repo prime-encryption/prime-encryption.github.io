@@ -1,0 +1,16 @@
+- get key integer (hash the key)
+- create character and prime number table
+- add key chars to the front of the character array
+- for every character:
+    - translate character to single prime
+    - multiply that prime by key integer
+    - push the multiplication result to the output array
+    - add that character to the front of the character array
+- reverse the output array
+- concat the output array into output string (with spaces)
+- for every character in output string:
+    - translate character to char code (`.charCodeAt()`)
+    - add char code of the previous character
+    - convert the sum to hex
+    - add leading zero if necessary
+    - append the hex to the final string

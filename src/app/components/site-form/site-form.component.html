@@ -1,0 +1,46 @@
+<form>
+    <div class="form-row">
+        <label for="key">Encryption key</label>
+        <div class="input-container">
+            <div class="key-input-container">
+                <input
+                    [type]="isKeyRevealed ? 'text' : 'password'"
+                    name="key"
+                    id="key"
+                    autocomplete="off"
+                    placeholder="Key"
+                    [(ngModel)]="key"
+                >
+                <button
+                    class="reveal-key-btn"
+                    type="button"
+                    (click)="toggleKey()"
+                >
+                    <img [src]="'/assets/visibility_' + (isKeyRevealed ? 'on' : 'off') + '.svg'" alt="reveal key">
+                </button>
+            </div>
+            <button 
+              class="link random-key-btn" 
+              *ngIf=" type == 'encrypt' "
+              type="button"
+              (click)="insertRandomKey()"
+            >get random key</button>
+        </div>
+    </div>
+    <div class="form-row">
+        <label for="text">Text to be {{ type == 'encrypt' ? 'encrypted' : 'decrypted' }}</label>
+        <textarea name="text" id="text" [(ngModel)]="text"></textarea>
+    </div>
+    <button class="submit-btn" (click)="onSubmit()">{{ type == 'encrypt' ? 'Encrypt' : 'Decrypt' }}</button>
+    <app-error-box [text]="errorText" [shouldShow]="shouldShowError"></app-error-box>
+    <hr>
+    <div class="output-container">
+        <div class="output-header">
+            <label for="output">{{ type == 'encrypt' ? 'Encrypted' : 'Decrypted' }} text</label>
+            <div class="button-wrapper">
+                <!-- TODO: add copy output button -->
+            </div>
+        </div>
+        <textarea name="output" id="output" readonly disabled [value]="output"></textarea>
+    </div>
+</form>

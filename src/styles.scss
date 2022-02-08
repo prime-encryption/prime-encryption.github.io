@@ -1,0 +1,114 @@
+
+:root {
+    --main: rgb(219, 53, 65);   //main color
+    --main-rgb: 219, 53, 65;
+    --comp: rgb(110, 179, 222); //complementary color
+    --acc:  rgb(226, 169, 164); //accent color
+    --bg:   white;              //background color 2
+    --bg2:  rgb(255, 241, 238); //background color 2
+
+    --width: 1160px;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font: inherit;
+    outline: none;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+body {
+    background: var(--bg);
+    font-family: lato, sans-serif;
+}
+ul {
+    list-style: none;
+}
+b {
+    font-weight: bold;
+}
+i {
+    font-style: italic;
+}
+p {
+    margin: 0.4rem 0;
+}
+button {
+    cursor: pointer;
+}
+.content-container {
+    width: var(--width);
+    margin: 0 auto;
+    min-height: calc(100vh - 7rem);
+}
+a[href],
+.link {
+    color: var(--main);
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+}
+a[href]::after,
+.link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%) scale(0);
+    bottom: -1px;
+    height: 1px;
+    background: var(--main);
+    transition: transform 0.3s ease;
+}
+a[href]:hover::after,
+a[href]:focus::after,
+.link:hover::after,
+.link:focus::after {
+    transform: translateX(-50%) scale(100%);
+}
+hr {
+    margin: 1rem 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+input, textarea {
+    border: 1px solid #999;
+    border-radius: 3px 0 0 3px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        border-color: var(--main);
+    }
+    &:focus + .reveal-password-btn {
+        border-color: var(--main);
+        border-left-color: #999;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    :root {
+        --width: 940px;
+    }
+}
+@media only screen and (max-width: 980px) {
+    :root {
+        --width: 760px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    :root {
+        --width: 520px;
+        font-size: 90%;
+    }
+}
+//! mobile
+@media only screen and (max-width: 560px) {
+    :root {
+        --width: calc(100% - 2rem);
+        font-size: 90%;
+    }
+}

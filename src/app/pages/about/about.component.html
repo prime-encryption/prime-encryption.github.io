@@ -1,0 +1,191 @@
+<div class="content-container">
+    <app-navbox [data]="navData"></app-navbox>
+    <h1 nav>About</h1>
+    <p>
+        Prime Encryption tool is a small project made mainly to practice creating front-end using <a href="https://angular.io/" target="_blank">Angular</a>. If you would like to, you can see the source code on <a href="https://github.com/prime-encryption/prime-encryption.github.io" target="_blank">GitHub</a>.
+    </p>
+    <p class="warning">
+        Our encryption algorithm is just a proof of concept, and should not be used to store sensitive data!
+    </p>
+    <hr>
+    <h1 nav>How it works</h1>
+    <p>
+        The algorithm's heart is its key, similarly to practically every other encryption algorithm. The key can be any string of text, of any length and made up of any characters.
+    </p>
+    <p>
+        The key is used to both encode and then decode the message, so it is needed for both actions. It is crucial that this key remains secret, as <b>anyone knowing the key can decode the message</b>!
+    </p>
+    <p>
+        It is best to choose a long key made up of many different characters, as it will be extremely hard to guess! You can use our random key generator to get a good key.
+    </p>
+    <h2 nav>Encryption</h2>
+    <div class="step">
+        <h3>Step 1 — create character array</h3>
+        <p>
+            First of all, an array of all ASCII characters is created, in order of their codes. It will be later used to determine what prime numbers corresponds to which character. If a certain character is, let's say, 5th from the front, it corresponds to the number <b>11</b>, as it's the 5th prime number.
+        </p>
+        <p>
+            We will call the array <code>CharArray</code> from now on.
+        </p>
+    </div>
+    <div class="step">
+        <h3>Step 2 — process the key</h3>
+        <p>
+            Processing the key starts with hashing it to get a unique integer for every key. We use a custom hashing function copied from <a href="https://gist.github.com/iperelivskiy/4110988">this post</a>.
+        </p>
+        <p>
+            <b>Note: </b> not <i>every</i> key out there is going to produce a fully unique integer. There may be some collisions, but there are about 1 billion possible hashes, so it is a very slim chance that a collision will happen.
+        </p>
+        <p>
+            Afterwards, the original key (not the hash code!) is read character by character, and each is removed from the <code>CharArray</code>, and later added to the end of it. By doing this, we hope to eliminate the possibility of breaking the encryption by utilizing the <a href="https://en.wikipedia.org/wiki/Frequency_analysis">frequency analysis</a> methods.
+        </p>
+    </div>
+    <div class="step">
+        <h3>Step 3 — process every character</h3>
+        <p>
+            Now that we are done with the key, we can move on to encrypting the message. This is done character by character, from the beginning. Each character goes through the steps below.
+        </p>
+        <div class="sub-step">
+            <h4>Step 3.1 — assign a prime number</h4>
+            <p>
+                First, we check what prime number corresponds to that particular character. We do this by looking at its position in the <code>CharArray</code>, and getting the <i>nth</i> prime number.
+            </p>
+            <p>
+                After the assignment is done, we move that character to the last position of <code>CharArray</code>.
+            </p>
+        </div>
+        <div class="sub-step">
+            <h4>Step 3.2 — multiply by the key</h4>
+            <p>
+                Now comes the real encryption. Here, we take the prime number from the previous step and multiply it by the hash code we got from the key. It creates a huge number, which is then converted to a hexadecimal number and saved for later.
+            </p>
+        </div>
+    </div>
+    <div class="step">
+        <h3>Step 4 — reverse the order</h3>
+        <p>
+            In this step we take all the hexadecimal values we created earlier and reverse their order. First number becomes last, last becomes first, and so on. This further improves the security of our encryption.
+        </p>
+        <p>
+            Then, we create one long string of text by putting a single space between every number. From now on, we will refer to this string as <code>HexString</code>.
+        </p>
+    </div>
+    <div class="step">
+        <h3>Step 5 — process the hex string</h3>
+        <p>
+            Here we go through the <code>HexString</code> and apply the below to every one of them.
+        </p>
+        <div class="sub-step">
+            <h4>Step 5.1 — get the ASCII code</h4>
+            <p>
+                We look at the <a href="https://en.wikipedia.org/wiki/ASCII">ASCII table</a> and determine the character code. We do the same for the previous character.
+            </p>
+        </div>
+        <div class="sub-step">
+            <h4>Step 5.2 — add the ASCII codes together</h4>
+            <p>
+                Now we sum the two ASCII codes together. In the case of the first character, instead of adding the ASCII code of the previous character, we add the remainder from dividing the key hash code by 128.
+            </p>
+        </div>
+        <div class="sub-step">
+            <h4>Step 5.3 — convert to hexadecimal</h4>
+            <p>
+                Here, again, we convert the resulting sum into a hexadecimal number. This will always result in a two-digit number being generated, with a leading zero being added if needed.
+            </p>
+            <p>
+                Afterwards, we just add the two-digit number to the final, encrypted text.
+            </p>
+        </div>
+    </div>
+    <div class="step">
+        <h3>Step 6 — display the encrypted text</h3>
+        <p>
+            Now, that we are ready with the encryption, we can finally reveal the result in a box below. We are done!
+        </p>
+    </div>
+    <h2 nav>Decryption</h2>
+    <p>
+        The decryption process is pretty much the inverted encryption process. The only exception is, that we have to process the key first in both cases.
+    </p>
+    <div class="step">
+        <h3>Step 1 — create character array</h3>
+        <p>
+            First of all, an array of all ASCII characters is created, in order of their codes. It will be later used to determine what prime numbers corresponds to which character. If a certain character is, let's say, 5th from the front, it corresponds to the number <b>11</b>, as it's the 5th prime number.
+        </p>
+        <p>
+            We will call the array <code>CharArray</code> from now on.
+        </p>
+    </div>
+    <div class="step">
+        <h3>Step 2 — process the key</h3>
+        <p>
+            Processing the key starts with hashing it to get a unique integer for every key. We use a custom hashing function copied from <a href="https://gist.github.com/iperelivskiy/4110988">this post</a>.
+        </p>
+        <p>
+            <b>Note: </b> not <i>every</i> key out there is going to produce a fully unique integer. There may be some collisions, but there are about 1 billion possible hashes, so it is a very slim chance that a collision will happen.
+        </p>
+        <p>
+            Afterwards, the original key (not the hash code!) is read character by character, and each is removed from the <code>CharArray</code>, and later added to the end of it. By doing this, we hope to eliminate the possibility of breaking the encryption by utilizing the <a href="https://en.wikipedia.org/wiki/Frequency_analysis">frequency analysis</a> methods.
+        </p>
+    </div>
+    <div class="step">
+        <h3>Step 3 — revert hex string processing</h3>
+        <p>
+            The encrypted text has to be first separated into many two-digit hex numbers. Those need to then be converted into decimal numbers, and stored for later use.
+        </p>
+        <p>
+            Then, the decimals are converted back into characters. From the first decimal we substract the remainder from dividing the key hash code by 128. From the later decimals, we substract the ASCII character code of the previous character.
+        </p>
+        <p>
+            Finally, after the substractions, the decimals are converted into characters according to their ASCII codes.
+        </p>
+    </div>
+    <div class="step">
+        <h3>Step 4 — reverse the order</h3>
+        <p>
+            Since the numbers separated by spaces come in reverse order, we need to reverse them.
+        </p>
+    </div>
+    <div class="step">
+        <h3>Step 5 — process every number</h3>
+        <p>
+            Now that we have all the numbers in the correct order, we can process them according to the algorithm. For each number, every sub-step has to be completed, and only then we can move on to the next number.
+        </p>
+        <div class="sub-step">
+            <h4>Step 5.1 — divide by the key</h4>
+            <p>
+                Each number has to be divided by the key hash code. It will give us a prime number, which we will use to assign the correct character.
+            </p>
+        </div>
+        <div class="sub-step">
+            <h4>Step 5.2 — convert prime into character</h4>
+            <p>
+                We now use the <code>CharTable</code> to determine which character corresponds to which prime number. After we read the character, we move it to the end of the table.
+            </p>
+        </div>
+        <div class="step">
+            <h3>Step 6 — display the decrypted text</h3>
+            <p>
+                Now, that we are ready with the decryption, we can finally reveal the result in a box below. We are done!
+            </p>
+        </div>
+    </div>
+    <hr>
+    <h1 nav>FAQ</h1>
+    <app-faq-item title="Is this secure?">
+        <p>
+            This project's encryption algorithm is only a proof-of-concept, and has not been professionally tested for security.
+        </p>
+        <p>
+            Our algorithm may contain certain flaws unknown to the author that could result in breaking the encryption and revealing the encrypted data.
+        </p>
+        <p>
+            If you are looking for secure encryption methods, read <a href="https://www.hp.com/us-en/shop/tech-takes/what-are-different-types-of-encryption">this article</a>.
+        </p>
+    </app-faq-item>
+    <app-faq-item title="How to contribute?">
+        <p>
+            This project is Open Source, published under the <a href="https://github.com/prime-encryption/prime-encryption.github.io/blob/main/LICENSE.md" target="_blank">MIT license</a>. The <a href="https://github.com/prime-encryption/prime-encryption.github.io" target="_blank">source code</a>, <a href="https://github.com/prime-encryption/prime-encryption.github.io/releases" target="_blank">releases & changelog</a>, and the <a href="https://github.com/prime-encryption/prime-encryption.github.io/issues" target="_blank">bug tracker</a> can be found in our repository on GitHub.
+        </p>
+    </app-faq-item>
+</div>
