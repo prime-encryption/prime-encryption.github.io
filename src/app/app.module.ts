@@ -17,6 +17,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ErrorBoxComponent } from './components/error-box/error-box.component';
 import { NavboxComponent } from './components/navbox/navbox.component';
 import { FaqItemComponent } from './pages/about/components/faq-item/faq-item.component';
+import { CopyButtonComponent } from './components/copy-button/copy-button.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FaqItemComponent } from './pages/about/components/faq-item/faq-item.com
     ErrorBoxComponent,
     NavboxComponent,
     FaqItemComponent,
+    CopyButtonComponent,
   ],
   imports: [
     BrowserModule,

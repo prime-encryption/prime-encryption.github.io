@@ -86,3 +86,9 @@ textarea:disabled {
         background: rgba(var(--main-rgb), 0.35);
     }
 }
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3px;
+}

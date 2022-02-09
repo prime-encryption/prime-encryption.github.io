@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { copyToClipboard } from 'src/app/scripts/functions';
 import { EncryptionService } from './../../services/encryption.service';
 
 @Component({
@@ -52,5 +53,9 @@ export class SiteFormComponent {
   }
   hideError() {
     this.shouldShowError = false;
+  }
+  
+  copyOutput() {
+    copyToClipboard(this.output);
   }
 }

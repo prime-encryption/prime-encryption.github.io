@@ -38,7 +38,7 @@
         <div class="output-header">
             <label for="output">{{ type == 'encrypt' ? 'Encrypted' : 'Decrypted' }} text</label>
             <div class="button-wrapper">
-                <!-- TODO: add copy output button -->
+                <app-copy-button (click)="copyOutput()"></app-copy-button>
             </div>
         </div>
         <textarea name="output" id="output" readonly disabled [value]="output"></textarea>

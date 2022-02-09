@@ -1,0 +1,18 @@
+button {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+        background: rgba(black, 0.075);
+    }
+    &:focus {
+        border-color: #808080;
+    }
+    &:active {
+        background: rgba(black, 0.15);
+    }
+}
