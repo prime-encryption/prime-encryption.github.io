@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClipboardModule } from 'ngx-clipboard';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -44,6 +45,7 @@ import { PasswordInputComponent } from './components/password-input/password-inp
     NoopAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    ClipboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

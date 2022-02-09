@@ -9,6 +9,13 @@
               class="link key-btn" 
               *ngIf=" type == 'encrypt' "
               type="button"
+              (click)="copyKey()"
+            >copy</button>
+            <span> • </span>
+            <button
+              class="link key-btn" 
+              *ngIf=" type == 'encrypt' "
+              type="button"
               (click)="insertRandomKey()"
             >get random key</button>
         </div>
