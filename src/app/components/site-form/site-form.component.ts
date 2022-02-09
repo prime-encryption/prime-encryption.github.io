@@ -31,7 +31,23 @@ export class SiteFormComponent {
     }
   }
 
+<<<<<<< Updated upstream
   onSubmit() {
+=======
+  onSubmit(form: FormGroup) {
+    if (!form.value.key) {
+      this.errorText = "Please set a valid key!";
+      this.showError();
+      this.output = "";
+      return;
+    }
+    if (!form.value.text) {
+      this.errorText = "Please specify a text to " + (this.type == 'encrypt' ? 'encrypt' : 'decrypt') + "!";
+      this.showError();
+      this.output = "";
+      return;
+    }
+>>>>>>> Stashed changes
     try {
       if (this.type == 'encrypt') {
         this.output = this.encryptionService.encrypt(this.key, this.text);
