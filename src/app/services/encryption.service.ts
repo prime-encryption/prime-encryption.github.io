@@ -16,7 +16,6 @@ export class EncryptionService {
         //! step 1
         // hash the key
         let keyHash: number = hash(key);
-        console.log(keyHash, keyHash % 128);
         
 
         //! step 2
@@ -121,7 +120,6 @@ export class EncryptionService {
         // process individual bigints
         for (const int of bigIntArr) {
             let prime = int / BigInt(keyHash);
-            console.log(prime);
             
             let char = charTable.primeToChar(Number(prime));
             ret += char;
@@ -212,7 +210,6 @@ class CharacterAndPrimesTable {
     primeToChar(num: number): string {
         let index = this._primeArr.indexOf(num);
         let char = this._charStack.valueAt(index);
-        console.log(this._charStack);
         
         this._charStack.moveToTop(char);
         return char;
