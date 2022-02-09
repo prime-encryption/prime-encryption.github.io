@@ -1,26 +1,12 @@
-<form>
+<form [formGroup]="form">
     <div class="form-row">
         <label for="key">Encryption key</label>
         <div class="input-container">
-            <div class="key-input-container">
-                <input
-                    [type]="isKeyRevealed ? 'text' : 'password'"
-                    name="key"
-                    id="key"
-                    autocomplete="off"
-                    placeholder="Key"
-                    [(ngModel)]="key"
-                >
-                <button
-                    class="reveal-key-btn"
-                    type="button"
-                    (click)="toggleKey()"
-                >
-                    <img [src]="'/assets/visibility_' + (isKeyRevealed ? 'on' : 'off') + '.svg'" alt="reveal key">
-                </button>
-            </div>
-            <button 
-              class="link random-key-btn" 
+            <app-password-input
+                formControlName="key"
+            ></app-password-input>
+            <button
+              class="link key-btn" 
               *ngIf=" type == 'encrypt' "
               type="button"
               (click)="insertRandomKey()"
@@ -29,9 +15,9 @@
     </div>
     <div class="form-row">
         <label for="text">Text to be {{ type == 'encrypt' ? 'encrypted' : 'decrypted' }}</label>
-        <textarea name="text" id="text" [(ngModel)]="text"></textarea>
+        <textarea name="text" id="text" formControlName="text"></textarea>
     </div>
-    <button class="submit-btn" (click)="onSubmit()">{{ type == 'encrypt' ? 'Encrypt' : 'Decrypt' }}</button>
+    <button class="submit-btn" (click)="onSubmit(form)">{{ type == 'encrypt' ? 'Encrypt' : 'Decrypt' }}</button>
     <app-error-box [text]="errorText" [shouldShow]="shouldShowError"></app-error-box>
     <hr>
     <div class="output-container">

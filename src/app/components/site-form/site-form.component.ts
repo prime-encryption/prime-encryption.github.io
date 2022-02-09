@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { copyToClipboard } from 'src/app/scripts/functions';
+import { Component, Input, ViewChild } from '@angular/core';
 import { EncryptionService } from './../../services/encryption.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PasswordInputComponent } from '../password-input/password-input.component';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-site-form',
@@ -8,32 +10,39 @@ import { EncryptionService } from './../../services/encryption.service';
   styleUrls: ['./site-form.component.scss']
 })
 export class SiteFormComponent {
+  @ViewChild(PasswordInputComponent, { static: true })
+  passwordInputComponent!: PasswordInputComponent;
   @Input() type!: string;
 
-  key!: string;
-  text!: string;
   output: string = "";
+  form = new FormGroup({
+    key: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1)
+    ]),
+    text: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1)
+    ]),
+  });
 
   isKeyRevealed: boolean = false;
   errorText = "Unable to " + (this.type == 'encrypt' ? 'encrypt' : 'decrypt') + '.';
   shouldShowError = false;
 
-  constructor(private encryptionService: EncryptionService) { }
+  constructor(private encryptionService: EncryptionService, private cliboardApi: ClipboardService) { }
 
   toggleKey(): void {
     this.isKeyRevealed = !this.isKeyRevealed;
   }
 
   insertRandomKey(): void {
-    this.key = "";
+    let newVal = "";
     for (let i = 0; i < 16; i++) {
-      this.key += Math.random().toString(36).substring(2,3);
+      newVal += Math.random().toString(36).substring(2,3);
     }
+    this.form.get('key')?.setValue(newVal);
   }
-
-<<<<<<< Updated upstream
-  onSubmit() {
-=======
   onSubmit(form: FormGroup) {
     if (!form.value.key) {
       this.errorText = "Please set a valid key!";
@@ -47,13 +56,12 @@ export class SiteFormComponent {
       this.output = "";
       return;
     }
->>>>>>> Stashed changes
     try {
       if (this.type == 'encrypt') {
-        this.output = this.encryptionService.encrypt(this.key, this.text);
+        this.output = this.encryptionService.encrypt(this.form.value.key, this.form.value.text);
       }
       else {
-        this.output = this.encryptionService.decrypt(this.key, this.text);
+        this.output = this.encryptionService.decrypt(this.form.value.key, this.form.value.text);
       }
       this.hideError();
     } catch (err) {
@@ -72,6 +80,10 @@ export class SiteFormComponent {
   }
   
   copyOutput() {
-    copyToClipboard(this.output);
+    this.cliboardApi.copyFromContent(this.output);
+  }
+  copyKey() {
+    console.log(this.form.value.key);
+    this.cliboardApi.copyFromContent(this.form.value.key);
   }
 }

@@ -29,40 +29,23 @@ textarea {
 textarea:disabled {
     cursor: text;
 }
-.key-input-container {
-    display: flex;
-    
-    input {
-        height: 26px;
-        font-size: 0.85rem;
-        border-right: none;
-        padding: 0 6px;
-        min-width: 160px;
-        max-width: 400px;
-        width: max-content;
-    }
-    button {
-        height: 28px;
-        width: 28px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #999;
-        border-radius: 0 3px 3px 0;
-        transition: border-color 0.3s ease;
-
-        img {
-            height: 18px;
-        }
-    }
-}
-.random-key-btn {
+.key-btn {
     border: none;
     background: none;
-    margin-left: 0.5rem;
+    margin-left: 0.2rem;
     height: max-content;
     font-size: 0.8rem;
     position: relative;
+
+    &:first-of-type {
+        margin-left: 0.5rem;
+    }
+
+    & + span {
+        margin-left: 0.2rem;
+        font-size: 70%;
+        color: #444;
+    }
 }
 .submit-btn {
     border: 1px solid #999;
