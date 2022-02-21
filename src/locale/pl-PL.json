@@ -2,7 +2,7 @@
   "locale": "pl-PL",
   "translations": {
     "component.explanation.text1": "Narzędzie Prime Encryption szyfruje lub odszyfrowuje tekst z użyciem specjalnego algorytmu bazującego na liczbach pierwszych.",
-    "component.explanation.text2": "Po więcej informacji, zobacz stronę",
+    "component.explanation.text2": "Po więcej informacji, zobacz stronę ",
     "component.explanation.text3": "O Nas",
     "component.explanation.text4": ".",
     "component.footer.text": "Prawa autorskie © {$INTERPOLATION} joker876. Wszystkie prawa zastrzeżone.",
@@ -12,7 +12,7 @@
     "component.safety-warning.heading": "Ostrzeżenie!",
     "component.safety-warning.text1": "Ten algorytm szyfrujący jest jedynie weryfikacją pomysłu i nie został przetestowany na bezpieczeństwo, a więc nie powinien być używany do przechowywania wrażliwych danych.",
     "component.safety-warning.text2": "Może on zawierać błędy nieznane autorowi, które mogłyby doporowadzić do złamania szyfru i odszyfrowania danych.",
-    "component.safety-warning.text3": "Jeśli szukasz bezpiecznych metod szyfrowania, przeczytaj",
+    "component.safety-warning.text3": "Jeśli szukasz bezpiecznych metod szyfrowania, przeczytaj ",
     "component.safety-warning.text4": "ten artykuł",
     "component.password.default_placeholder": "Hasło",
     "form.key.label": "Klucz szyfrujący",
