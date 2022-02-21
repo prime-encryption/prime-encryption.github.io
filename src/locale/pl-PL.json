@@ -1,0 +1,31 @@
+{
+  "locale": "pl-PL",
+  "translations": {
+    "component.explanation.text1": "Narzędzie Prime Encryption szyfruje lub odszyfrowuje tekst z użyciem specjalnego algorytmu bazującego na liczbach pierwszych.",
+    "component.explanation.text2": "Po więcej informacji, zobacz stronę",
+    "component.explanation.text3": "O Nas",
+    "component.explanation.text4": ".",
+    "component.footer.text": "Prawa autorskie © {$INTERPOLATION} joker876. Wszystkie prawa zastrzeżone.",
+    "component.header.link.encrypt": "ZASZYFRUJ",
+    "component.header.link.decrypt": "ODSZYFRUJ",
+    "component.header.link.about": "O NAS",
+    "component.safety-warning.heading": "Ostrzeżenie!",
+    "component.safety-warning.text1": "Ten algorytm szyfrujący jest jedynie weryfikacją pomysłu i nie został przetestowany na bezpieczeństwo, a więc nie powinien być używany do przechowywania wrażliwych danych.",
+    "component.safety-warning.text2": "Może on zawierać błędy nieznane autorowi, które mogłyby doporowadzić do złamania szyfru i odszyfrowania danych.",
+    "component.safety-warning.text3": "Jeśli szukasz bezpiecznych metod szyfrowania, przeczytaj",
+    "component.safety-warning.text4": "ten artykuł",
+    "component.password.default_placeholder": "Hasło",
+    "form.key.label": "Klucz szyfrujący",
+    "form.key.placeholder": "Klucz",
+    "form.button.copy_key": "kopiuj",
+    "form.button.random_key": "losowy klucz",
+    "form.input.label.encrypt": "Tekst do zaszyfrowania",
+    "form.input.label.decrypt": "Tekst do odszyfrowania",
+    "form.button.submit.encrypt": "Zaszyfruj",
+    "form.button.submit.decrypt": "Odszyfruj",
+    "form.output.label": "Rezultat",
+    "form.error.generic": "Nie udało się przetworzyć wiadomości!",
+    "form.error.blank_key": "Wpisz prawidłowy klucz!",
+    "form.error.blank_input": "Wpisz tekst do przetworzenia!"
+  }
+}

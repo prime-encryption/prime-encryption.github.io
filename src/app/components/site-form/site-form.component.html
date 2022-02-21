@@ -1,16 +1,18 @@
 <form [formGroup]="form">
     <div class="form-row">
-        <label for="key" i18n="key input label">Encryption key</label>
+        <label for="key" i18n="@@form.key.label">Encryption key</label>
         <div class="input-container">
             <app-password-input
                 formControlName="key"
+                placeholder="Key"
+                i18n-placeholder="@@form.key.placeholder"
             ></app-password-input>
             <button
               class="link key-btn" 
               *ngIf=" type == 'encrypt' "
               type="button"
               (click)="copyKey()"
-              i18n="copy button"
+              i18n="@@form.button.copy_key"
             >copy</button>
             <span> • </span>
             <button
@@ -18,7 +20,7 @@
               *ngIf=" type == 'encrypt' "
               type="button"
               (click)="insertRandomKey()"
-              i18n="random key button"
+              i18n="@@form.button.random_key"
             >get random key</button>
         </div>
     </div>
@@ -26,12 +28,12 @@
         <label
             for="text"
             *ngIf="type == 'encrypt'"
-            i18n="input label encrypt"
+            i18n="@@form.input.label.encrypt"
         >Text to be encrypted</label>
         <label
             for="text"
             *ngIf="type != 'encrypt'"
-            i18n="input label decrypt"
+            i18n="@@form.input.label.decrypt"
         >Text to be decrypted</label>
         <textarea name="text" id="text" formControlName="text"></textarea>
     </div>
@@ -39,19 +41,19 @@
         class="submit-btn"
         (click)="onSubmit(form)"
         *ngIf="type == 'encrypt'"
-        i18n="submit button encrypt"
+        i18n="@@form.button.submit.encrypt"
     >Encrypt</button>
     <button
         class="submit-btn"
         (click)="onSubmit(form)"
         *ngIf="type == 'decrypt'"
-        i18n="submit button decrypt"
+        i18n="@@form.button.submit.decrypt"
     >Decrypt</button>
     <app-error-box [text]="errorText" [shouldShow]="shouldShowError"></app-error-box>
     <hr>
     <div class="output-container">
         <div class="output-header">
-            <label for="output" i18n="output label">Result text</label>
+            <label for="output" i18n="@@form.output.label">Result text</label>
             <div class="button-wrapper">
                 <app-copy-button (click)="copyOutput()"></app-copy-button>
             </div>

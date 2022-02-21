@@ -1,0 +1,31 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "component.explanation.text1": "Prime encryption tool encrypts or decrypts a piece of text using a custom-designed algorithm based on prime numbers.",
+    "component.explanation.text2": "For a more detailed explanation, see the",
+    "component.explanation.text3": "About",
+    "component.explanation.text4": "page.",
+    "component.footer.text": "Copyright © {$INTERPOLATION} joker876. All Rights Reserved",
+    "component.header.link.encrypt": "ENCRYPT",
+    "component.header.link.decrypt": "DECRYPT",
+    "component.header.link.about": "ABOUT",
+    "component.password.default_placeholder": "Password",
+    "component.safety-warning.heading": "Warning!",
+    "component.safety-warning.text1": " This encryption algorithm is only a proof of concept and has not been tested for security, and therefore, should not be used to store sensitive data. ",
+    "component.safety-warning.text2": " It may contain certain flaws unknown to the author that could result in breaking the encryption and revealing the data. ",
+    "component.safety-warning.text3": "If you are looking for secure encryption methods, read",
+    "component.safety-warning.text4": "this article",
+    "form.key.label": "Encryption key",
+    "form.key.placeholder": "Key",
+    "form.button.copy_key": "copy",
+    "form.button.random_key": "get random key",
+    "form.input.label.encrypt": "Text to be encrypted",
+    "form.input.label.decrypt": "Text to be decrypted",
+    "form.button.submit.encrypt": "Encrypt",
+    "form.button.submit.decrypt": "Decrypt",
+    "form.output.label": "Result text",
+    "form.error.generic": "Unable to process the message!",
+    "form.error.blank_key": "Please set a valid key!",
+    "form.error.blank_input": "Please specify a text to process!"
+  }
+}

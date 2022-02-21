@@ -27,7 +27,7 @@ export class SiteFormComponent {
   });
 
   isKeyRevealed: boolean = false;
-  errorText = $localize`:general error:Unable to process the message!`;
+  errorText = $localize`:@@form.error.generic:Unable to process the message!`;
   shouldShowError = false;
 
   constructor(private encryptionService: EncryptionService, private cliboardApi: ClipboardService) { }
@@ -45,13 +45,13 @@ export class SiteFormComponent {
   }
   onSubmit(form: FormGroup) {
     if (!form.value.key) {
-      this.errorText = $localize`:blank key error:Please set a valid key!`;
+      this.errorText = $localize`:@@form.error.blank_key:Please set a valid key!`;
       this.showError();
       this.output = "";
       return;
     }
     if (!form.value.text) {
-      this.errorText = $localize`:unspecified text error:Please specify a text to process!`;
+      this.errorText = $localize`:@@form.error.blank_input:Please specify a text to process!`;
       this.showError();
       this.output = "";
       return;

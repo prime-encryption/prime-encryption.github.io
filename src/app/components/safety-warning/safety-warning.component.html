@@ -1,15 +1,19 @@
 <aside class="safety-warning-container">
     <h5>
         <fa-icon [icon]="faWarning"></fa-icon>
-        <span>Warning!</span>
+        <span i18n="@@component.safety-warning.heading">Warning!</span>
     </h5>
-    <p>
+    <p i18n="@@component.safety-warning.text1">
         This encryption algorithm is only a proof of concept and has not been tested for security, and therefore, should not be used to store sensitive data.
     </p>
-    <p>
+    <p i18n="@@component.safety-warning.text2">
         It may contain certain flaws unknown to the author that could result in breaking the encryption and revealing the data.
     </p>
     <p>
-        If you are looking for secure encryption methods, read <a href="https://www.hp.com/us-en/shop/tech-takes/what-are-different-types-of-encryption">this article</a>.
+        <span i18n="@@component.safety-warning.text3">If you are looking for secure encryption methods, read</span>
+        <a
+            href="https://www.hp.com/us-en/shop/tech-takes/what-are-different-types-of-encryption"
+            i18n="@@component.safety-warning.text4"
+        >this article</a>.
     </p>
 </aside>

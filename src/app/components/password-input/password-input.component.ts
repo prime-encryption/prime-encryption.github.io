@@ -16,7 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class PasswordInputComponent implements OnInit, ControlValueAccessor {
   value = "";
   isPasswordRevealed = false;
-  @Input() placeholder: string = "Password";
+  @Input() placeholder: string = $localize`:@@component.password.default_placeholder:Password`;
   togglePasswordVisibility() {
     this.isPasswordRevealed = !this.isPasswordRevealed;
   }

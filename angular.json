@@ -20,7 +20,7 @@
         "sourceLocale": "en-US",
         "locales": {
           "pl-PL": {
-            "translation": "src/locale/messages.pl-PL.xlf"
+            "translation": "src/locale/pl-PL.json"
           }
         }
       },
@@ -95,7 +95,10 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prime-encryption.github.io:build"
+            "browserTarget": "prime-encryption.github.io:build",
+            "outputPath": "src/translate",
+            "outFile": "translate.json",
+            "format": "json"
           }
         },
         "test": {
