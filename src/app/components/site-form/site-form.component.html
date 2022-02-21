@@ -1,6 +1,6 @@
 <form [formGroup]="form">
     <div class="form-row">
-        <label for="key">Encryption key</label>
+        <label for="key" i18n="key input label">Encryption key</label>
         <div class="input-container">
             <app-password-input
                 formControlName="key"
@@ -10,6 +10,7 @@
               *ngIf=" type == 'encrypt' "
               type="button"
               (click)="copyKey()"
+              i18n="copy button"
             >copy</button>
             <span> • </span>
             <button
@@ -17,19 +18,40 @@
               *ngIf=" type == 'encrypt' "
               type="button"
               (click)="insertRandomKey()"
+              i18n="random key button"
             >get random key</button>
         </div>
     </div>
     <div class="form-row">
-        <label for="text">Text to be {{ type == 'encrypt' ? 'encrypted' : 'decrypted' }}</label>
+        <label
+            for="text"
+            *ngIf="type == 'encrypt'"
+            i18n="input label encrypt"
+        >Text to be encrypted</label>
+        <label
+            for="text"
+            *ngIf="type != 'encrypt'"
+            i18n="input label decrypt"
+        >Text to be decrypted</label>
         <textarea name="text" id="text" formControlName="text"></textarea>
     </div>
-    <button class="submit-btn" (click)="onSubmit(form)">{{ type == 'encrypt' ? 'Encrypt' : 'Decrypt' }}</button>
+    <button
+        class="submit-btn"
+        (click)="onSubmit(form)"
+        *ngIf="type == 'encrypt'"
+        i18n="submit button encrypt"
+    >Encrypt</button>
+    <button
+        class="submit-btn"
+        (click)="onSubmit(form)"
+        *ngIf="type == 'decrypt'"
+        i18n="submit button decrypt"
+    >Decrypt</button>
     <app-error-box [text]="errorText" [shouldShow]="shouldShowError"></app-error-box>
     <hr>
     <div class="output-container">
         <div class="output-header">
-            <label for="output">{{ type == 'encrypt' ? 'Encrypted' : 'Decrypted' }} text</label>
+            <label for="output" i18n="output label">Result text</label>
             <div class="button-wrapper">
                 <app-copy-button (click)="copyOutput()"></app-copy-button>
             </div>

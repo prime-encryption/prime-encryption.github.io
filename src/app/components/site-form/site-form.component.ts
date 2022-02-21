@@ -27,7 +27,7 @@ export class SiteFormComponent {
   });
 
   isKeyRevealed: boolean = false;
-  errorText = "Unable to " + (this.type == 'encrypt' ? 'encrypt' : 'decrypt') + '.';
+  errorText = $localize`:general error:Unable to process the message!`;
   shouldShowError = false;
 
   constructor(private encryptionService: EncryptionService, private cliboardApi: ClipboardService) { }
@@ -45,13 +45,13 @@ export class SiteFormComponent {
   }
   onSubmit(form: FormGroup) {
     if (!form.value.key) {
-      this.errorText = "Please set a valid key!";
+      this.errorText = $localize`:blank key error:Please set a valid key!`;
       this.showError();
       this.output = "";
       return;
     }
     if (!form.value.text) {
-      this.errorText = "Please specify a text to " + (this.type == 'encrypt' ? 'encrypt' : 'decrypt') + "!";
+      this.errorText = $localize`:unspecified text error:Please specify a text to process!`;
       this.showError();
       this.output = "";
       return;

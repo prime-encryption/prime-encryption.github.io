@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3231731507282070213" datatype="html">
+        <source>Encryption key</source>
+        <target>Klucz szyfrujący</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">key input label</note>
+      </trans-unit>
+      <trans-unit id="6862265996781523030" datatype="html">
+        <source>copy</source>
+        <target>kopiuj</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">copy button</note>
+      </trans-unit>
+      <trans-unit id="3887987311351859990" datatype="html">
+        <source>get random key</source>
+        <target>losowy klucz</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">random key button</note>
+      </trans-unit>
+      <trans-unit id="4748065195553495855" datatype="html">
+        <source>Text to be encrypted</source>
+        <target>Tekst do zaszyfrowania</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">input label encrypt</note>
+      </trans-unit>
+      <trans-unit id="1801004284165097406" datatype="html">
+        <source>Text to be decrypted</source>
+        <target>Text do odszyfrowania</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">input label decrypt</note>
+      </trans-unit>
+      <trans-unit id="1336614999482787048" datatype="html">
+        <source>Encrypt</source>
+        <target>Zaszyfruj</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <note priority="1" from="description">submit button encrypt</note>
+      </trans-unit>
+      <trans-unit id="5259531972532369907" datatype="html">
+        <source>Decrypt</source>
+        <target>Odszyfruj</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">submit button decrypt</note>
+      </trans-unit>
+      <trans-unit id="2026774030196294731" datatype="html">
+        <source>Result text</source>
+        <target>Rezultat</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <note priority="1" from="description">output label</note>
+      </trans-unit>
+      <trans-unit id="5765450991063719460" datatype="html">
+        <source>Unable to process the message!</source>
+        <target>Nie udało się przetworzyć wiadomości!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">general error</note>
+      </trans-unit>
+      <trans-unit id="1540009485902486787" datatype="html">
+        <source>Please set a valid key!</source>
+        <source>Wpisz poprawny klucz!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <note priority="1" from="description">blank key error</note>
+      </trans-unit>
+      <trans-unit id="2426745587192197697" datatype="html">
+        <source>Please specify a text to process!</source>
+        <target>Sprecyzuj tekst do przetworzenia!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/site-form/site-form.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <note priority="1" from="description">unspecified text error</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

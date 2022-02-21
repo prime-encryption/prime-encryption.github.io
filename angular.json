@@ -16,6 +16,14 @@
           "strict": true
         }
       },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "pl-PL": {
+            "translation": "src/locale/messages.pl-PL.xlf"
+          }
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -29,6 +37,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "localize": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
