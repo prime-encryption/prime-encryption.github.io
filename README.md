@@ -1,27 +1,15 @@
-# PrimeEncryption.Github.Io
+# Prime Encryption
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+Prime Encryption tool is a small project made mainly to practice creating front-end using [Angular](https://angular.io/). It encrypts or decrypts a piece of text using a custom-designed algorithm based on prime numbers.
 
-## Development server
+## Warning!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project's encryption algorithm is only a proof-of-concept, and has not been professionally tested for security.
 
-## Code scaffolding
+Our algorithm may contain certain flaws unknown to the author, that could result in breaking the encryption and revealing the encrypted data.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+If you are looking for secure encryption methods, read [this article](https://www.hp.com/us-en/shop/tech-takes/what-are-different-types-of-encryption).
 
-## Build
+----
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This is a project by [joker876](https://github.com/joker876).
