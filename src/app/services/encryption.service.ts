@@ -1,6 +1,5 @@
-import { ReturnStatement } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { PRIME_NUMBERS, ALL_CHARS } from '../scripts/constants';
+import { ALL_CHARS, PRIME_NUMBERS } from '../scripts/constants';
 
 @Injectable({
     providedIn: 'root'
@@ -58,13 +57,13 @@ export class EncryptionService {
             // get char code of the previous character (user 0 if first character)
             let prevChar = primeConversionString[i-1];
             let prevCharCode = prevChar?.charCodeAt(0) ?? keyHash % 128;
-            // sum the two values, and convert to hex
+            // sum the two values, and convert to base36
             let sum = charCode + prevCharCode;
-            let sumHex = sum.toString(16);
+            let sum36 = sum.toString(16);
             // add leading zero if necessary
-            while (sumHex.length <= 1) sumHex = '0'+sumHex;
+            while (sum36.length <= 1) sum36 = '0'+sum36;
             // add to output string
-            ret += sumHex
+            ret += sum36
         }
 
         //! return the encoded string
@@ -95,8 +94,8 @@ export class EncryptionService {
         // convert hex values back to individual characters
         let intermediateString = "";
         for (let i = 0; i < strBytes.length; i++) {
-            let hex = strBytes[i];
-            let int = parseInt(hex, 16);
+            let base36 = strBytes[i];
+            let int = parseInt(base36, 36);
             if (i == 0) {
                 int -= keyHash % 128;
             }
